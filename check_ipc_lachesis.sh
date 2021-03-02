@@ -12,7 +12,7 @@ if [ ! -e "$ipc" ]; then
 fi
 
 if [ ! -w "$ipc" ]; then
-   sudo -u opera /usr/bin/chmod g+r+w /var/opera/lachesis/data/lachesis.ipc
+   sudo -u opera chmod g+r+w /var/opera/lachesis/data/lachesis.ipc
 fi
 
 if [ ! -w "$ipc" ]; then
