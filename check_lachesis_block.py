@@ -6,8 +6,8 @@ import time
 import datetime
 import sys
 
-ipc = "/var/opera/lachesis/data/lachesis.ipc"
-lastBlockStore = "/tmp/icinga-last-lachesis-block"
+ipc="/var/opera/opera/opera.ipc"
+lastBlockStore="/tmp/icinga-last-lachesis-block"
 
 warn = int(sys.argv[1])
 crit = int(sys.argv[2])

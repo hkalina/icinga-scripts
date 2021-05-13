@@ -1,6 +1,10 @@
 #!/bin/bash
 
-ipc=/var/opera/lachesis/data/lachesis.ipc
+ipc="/var/opera/opera/opera.ipc"
+
+# requires following in visudo:
+# nagios ALL = (opera) NOPASSWD: /usr/bin/chmod g+r+w /var/opera/opera/opera.ipc
+
 req='{"jsonrpc":"2.0","method":"net_version","params":[],"id":123}'
 expected='{"jsonrpc":"2.0","id":123,"result":"250"}'
 warn=$1 # in seconds as 0.12
@@ -12,7 +16,7 @@ if [ ! -e "$ipc" ]; then
 fi
 
 if [ ! -w "$ipc" ]; then
-   sudo -u opera chmod g+r+w /var/opera/lachesis/data/lachesis.ipc
+   sudo -u opera chmod g+r+w $ipc
 fi
 
 if [ ! -w "$ipc" ]; then
